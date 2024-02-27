@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
@@ -39,5 +41,9 @@ public class UIManager : MonoBehaviour
 
         obj.SetActive(true);
         return popup;
+    }
+    private void Update()
+    {
+        
     }
 }

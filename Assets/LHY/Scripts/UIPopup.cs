@@ -7,12 +7,8 @@ public class UIPopup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Refresh();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
