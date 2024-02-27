@@ -832,8 +832,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3098050837769282802}
   - component: {fileID: 1909387120256149119}
+  - component: {fileID: 670571128385353768}
   m_Layer: 0
-  m_Name: Settings
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -865,6 +866,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 552f0fee8f7a75f4883232df97d5f5a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &670571128385353768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6060412176633298366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc53a899976f4b546b8405d36674a48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7500301103619269308
