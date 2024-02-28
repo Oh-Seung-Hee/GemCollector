@@ -43,6 +43,11 @@ public class PlayerGroundedState : PlayerBaseState
 
     protected virtual void OnMove()
     {
+        if(stateMachine.Player.Input.PlayerActions.Run.phase == InputActionPhase.Performed)
+        {
+            stateMachine.ChangeState(stateMachine.RunState);
+            return;
+        }
         stateMachine.ChangeState(stateMachine.WalkState);
     }
 
