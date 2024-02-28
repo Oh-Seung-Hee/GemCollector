@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PauseControl : MonoBehaviour
 {
+    /*
     private void Start()
     {
         Pause();
@@ -17,4 +18,5 @@ public class PauseControl : MonoBehaviour
     {
         Time.timeScale = 1.0f;
     }
+    */
 }

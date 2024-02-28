@@ -44,11 +44,6 @@ public class UIManager : MonoBehaviour
         obj.SetActive(true);
         return popup;
     }
-
-    public void DestoryPopup(GameObject obj)
-    {
-        GameObject.Destroy(obj);
-    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
