@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerComboAttackState : PlayerAttackState
 {
     private bool alreadyAppliedForce;
+    private bool alreadyAppliedDealing;
     private bool alreadyApplyCombo;
 
     AttackInfoData attackInfoData;
@@ -20,6 +21,7 @@ public class PlayerComboAttackState : PlayerAttackState
 
         alreadyApplyCombo = false;
         alreadyAppliedForce = false;
+        alreadyAppliedDealing = false;
 
         int comboIndex = stateMachine.ComboIndex;
         attackInfoData = stateMachine.Player.Data.AttakData.GetAttackInfo(comboIndex);
@@ -70,6 +72,17 @@ public class PlayerComboAttackState : PlayerAttackState
 
             if (normalizedTime >= attackInfoData.ComboTransitionTime)
                 TryComboAttack();
+            if (!alreadyAppliedDealing && normalizedTime >= attackInfoData.Dealing_Start_TransitionTime)
+            {
+                stateMachine.Player.Weapon.SetAttack(attackInfoData.Damage, attackInfoData.Force);
+                stateMachine.Player.Weapon.gameObject.SetActive(true);
+                alreadyAppliedDealing = true;
+            }
+
+            if (alreadyAppliedDealing && normalizedTime >= attackInfoData.Dealing_End_TransitionTime)
+            {
+                stateMachine.Player.Weapon.gameObject.SetActive(false);
+            }
         }
         else
         {
