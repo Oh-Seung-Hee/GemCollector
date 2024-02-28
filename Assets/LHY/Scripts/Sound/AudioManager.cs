@@ -5,7 +5,6 @@ using UnityEngine.Audio;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-//AudioMixer에 관한 Control과 volume의 관리
 public class AudioManager : MonoBehaviour
 {
     #region Singleton
