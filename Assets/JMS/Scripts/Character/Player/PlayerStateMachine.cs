@@ -21,6 +21,7 @@ public class PlayerStateMachine : StateMachine
     public float MovementSpeedModifier { get; set; } = 1f;
 
     public float JumpForce { get; set; }
+    public Vector3 JumpDirection { get; set; }
 
     public bool IsAttacking { get; set; }
     public int ComboIndex {  get; set; }

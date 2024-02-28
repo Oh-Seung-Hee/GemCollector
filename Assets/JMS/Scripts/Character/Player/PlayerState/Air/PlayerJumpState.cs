@@ -10,6 +10,8 @@ public class PlayerJumpState : PlayerAirState
 
     public override void Enter()
     {
+        stateMachine.JumpDirection = GetMovementDirection();
+
         stateMachine.JumpForce = stateMachine.Player.Data.AirData.JumpForce;
         stateMachine.Player.ForceReceiver.Jump(stateMachine.JumpForce);
 

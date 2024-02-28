@@ -76,7 +76,7 @@ public class PlayerBaseState : IState
     }
     protected virtual void OnJumpStarted(InputAction.CallbackContext context)
     {
-
+        
     }
     protected virtual void OnAttackPerformed(InputAction.CallbackContext context)
     {
@@ -101,7 +101,7 @@ public class PlayerBaseState : IState
         Move(movementDirection);
     }
 
-    private Vector3 GetMovementDirection()
+    protected Vector3 GetMovementDirection()
     {
         Vector3 forward = stateMachine.MainCameraTransform.forward;
         Vector3 right = stateMachine.MainCameraTransform.right;
@@ -124,7 +124,7 @@ public class PlayerBaseState : IState
         }
     }
 
-    private void Move(Vector3 movementDirection)
+    protected virtual void Move(Vector3 movementDirection)
     {
         float movementSpeed = GetMovemenetSpeed();
         stateMachine.Player.Controller.Move(
@@ -133,7 +133,7 @@ public class PlayerBaseState : IState
             * Time.fixedDeltaTime
             );
     }
-    private float GetMovemenetSpeed()
+    protected float GetMovemenetSpeed()
     {
         float movementSpeed = stateMachine.MovementSpeed * stateMachine.MovementSpeedModifier;
         return movementSpeed;

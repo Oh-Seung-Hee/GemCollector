@@ -19,4 +19,14 @@ public class PlayerAirState : PlayerBaseState
         base.Exit();
         StopAnimation(stateMachine.Player.AnimationData.AirParameterHash);
     }
+
+    protected override void Move(Vector3 movementDirection)
+    {
+        float movementSpeed = GetMovemenetSpeed();
+        stateMachine.Player.Controller.Move(
+            ((stateMachine.JumpDirection * movementSpeed)
+            + stateMachine.Player.ForceReceiver.Movement)
+            * Time.fixedDeltaTime
+            );
+    }
 }
