@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
+    TypingEffect typingeffect { get; set; }
+
     private static UIManager _singleton = new UIManager();
     public static UIManager Get() { return _singleton; }
     public static bool Has() { return _singleton != null; }
@@ -40,25 +43,37 @@ public class UIManager : MonoBehaviour
     {
         var popup = obj.GetComponent<UIPopup>();
         popups.Insert(0, popup);
-
+        
         obj.SetActive(true);
         return popup;
+    }
+    public void ShowMenuPopup()
+    {
+        if (!isMenu)
+        {
+            isMenu = true;
+            Debug.Log("Menu를 엽니다.");
+            ShowPopup("Menu");
+        }
+        else
+        {
+            Debug.Log("이미 Menu가 열려 있습니다.");
+            isMenu = false;
+        }
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!isMenu)
-            {
-                isMenu = true;
-                Debug.Log("Menu를 엽니다.");
-                ShowPopup("Menu");
-            }
-            else
-            {
-                Debug.Log("이미 Menu가 열려 있습니다.");
-                isMenu = false;
-            }
+            ShowMenuPopup();
         }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            ShowPopup("Typing");
+        }
+    }
+    public void SceneChange(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
