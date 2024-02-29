@@ -24,7 +24,7 @@ public class PlayerAirState : PlayerBaseState
     {
         float movementSpeed = GetMovemenetSpeed();
         stateMachine.Player.Controller.Move(
-            ((stateMachine.JumpDirection * movementSpeed)
+            ((stateMachine.SaveDirection * movementSpeed)
             + stateMachine.Player.ForceReceiver.Movement)
             * Time.fixedDeltaTime
             );

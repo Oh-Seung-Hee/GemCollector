@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     [field: SerializeField] public Weapon Weapon { get; private set; }
 
 
-    private EnemyStateMachine stateMachine;
+    public EnemyStateMachine stateMachine;
 
     void Awake()
     {

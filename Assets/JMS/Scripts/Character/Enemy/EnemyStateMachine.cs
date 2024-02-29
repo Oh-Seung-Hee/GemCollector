@@ -11,6 +11,7 @@ public class EnemyStateMachine : StateMachine
     public EnemyIdleState IdleState { get; }
     public EnemyChasingState ChasingState { get; }
     public EnemyAttackState AttackState { get; }
+    public EnemyHitState HitState { get; }
 
     public Vector2 MovementInput { get; set; }
     public float MovementSpeed { get; private set; }
@@ -27,6 +28,7 @@ public class EnemyStateMachine : StateMachine
         IdleState = new EnemyIdleState(this);
         ChasingState = new EnemyChasingState(this);
         AttackState = new EnemyAttackState(this);
+        HitState = new EnemyHitState(this);
 
         MovementSpeed = enemy.Data.GroundedData.BaseSpeed;
         RotationDamping = enemy.Data.GroundedData.BaseRotationDamping;
