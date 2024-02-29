@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: e4685f072266a6245bb2019db3262b52
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bgmSource: {instanceID: 0}
+  - sfxCource: {instanceID: 0}
+  - mixer: {instanceID: 0}
+  - bgmSlider: {instanceID: 0}
+  - sfxSlider: {instanceID: 0}
+  - masterSlider: {instanceID: 0}
+  - mainBgmClip: {instanceID: 0}
+  - introBgmClip: {instanceID: 0}
+  - walkClip: {instanceID: 0}
+  - jumpClip: {instanceID: 0}
+  - getItemClip: {instanceID: 0}
+  - uiSelectClip: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
