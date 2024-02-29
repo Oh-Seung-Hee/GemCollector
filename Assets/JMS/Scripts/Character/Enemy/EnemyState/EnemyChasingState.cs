@@ -9,6 +9,8 @@ public class EnemyChasingState : EnemyBaseState
     }
     public override void Enter()
     {
+        stateMachine.AttackDirection = GetMovementDirection();
+
         stateMachine.MovementSpeedModifier = 1;
         base.Enter();
         StartAnimation(stateMachine.Enemy.AnimationData.GroundParameterHash);
