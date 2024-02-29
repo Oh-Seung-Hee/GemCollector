@@ -47,6 +47,8 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1.0f;
         Destroy(gameObject);
     }
+
+    //todo : ºÐ¸®
     public void SceneChange(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
