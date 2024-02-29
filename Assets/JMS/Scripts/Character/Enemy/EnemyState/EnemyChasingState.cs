@@ -9,6 +9,8 @@ public class EnemyChasingState : EnemyBaseState
     }
     public override void Enter()
     {
+        stateMachine.AttackDirection = GetMovementDirection();
+
         stateMachine.MovementSpeedModifier = 1;
         base.Enter();
         StartAnimation(stateMachine.Enemy.AnimationData.GroundParameterHash);
@@ -40,7 +42,7 @@ public class EnemyChasingState : EnemyBaseState
 
     private bool IsInAttackRange()
     {
-        // if (stateMachine.Target.IsDead) { return false; }
+        if (stateMachine.Target.IsDead) { return false; }
 
         float playerDistanceSqr = (stateMachine.Target.transform.position - stateMachine.Enemy.transform.position).sqrMagnitude;
 

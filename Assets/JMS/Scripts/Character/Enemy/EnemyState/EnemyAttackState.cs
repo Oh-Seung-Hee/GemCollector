@@ -60,7 +60,6 @@ public class EnemyAttackState : EnemyBaseState
             if (IsInChaseRange())
             {
                 stateMachine.ChangeState(stateMachine.ChasingState);
-                stateMachine.AttackDirection = GetMovementDirection();
                 return;
             }
             else

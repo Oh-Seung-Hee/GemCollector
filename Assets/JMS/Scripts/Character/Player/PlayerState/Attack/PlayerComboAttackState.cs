@@ -41,8 +41,6 @@ public class PlayerComboAttackState : PlayerAttackState
     {
         if (alreadyApplyCombo) return;
 
-        if (attackInfoData.ComboStateIndex == -1) return;
-
         if (!stateMachine.IsAttacking) return;
 
         alreadyApplyCombo = true;
@@ -65,6 +63,7 @@ public class PlayerComboAttackState : PlayerAttackState
         ForceMove();
 
         float normalizedTime = GetNormalizedTime(stateMachine.Player.Animator, "Attack");
+
         if (normalizedTime < 1f)
         {
             if (normalizedTime >= attackInfoData.ForceTransitionTime)
@@ -72,6 +71,7 @@ public class PlayerComboAttackState : PlayerAttackState
 
             if (normalizedTime >= attackInfoData.ComboTransitionTime)
                 TryComboAttack();
+
             if (!alreadyAppliedDealing && normalizedTime >= attackInfoData.Dealing_Start_TransitionTime)
             {
                 stateMachine.Player.Weapon.SetAttack(attackInfoData.Damage, attackInfoData.Force);
@@ -83,18 +83,19 @@ public class PlayerComboAttackState : PlayerAttackState
             {
                 stateMachine.Player.Weapon.gameObject.SetActive(false);
             }
-        }
-        else
-        {
+
             if (alreadyApplyCombo)
             {
                 stateMachine.ComboIndex = attackInfoData.ComboStateIndex;
-                stateMachine.ChangeState(stateMachine.ComboAttackState);
+                if (stateMachine.ComboIndex == 0)
+                    stateMachine.ChangeState(stateMachine.IdleState);
+                else
+                    stateMachine.ChangeState(stateMachine.ComboAttackState);
             }
-            else
-            {
-                stateMachine.ChangeState(stateMachine.IdleState);
-            }
+        }
+        else
+        {
+            stateMachine.ChangeState(stateMachine.IdleState);
         }
     }
 }

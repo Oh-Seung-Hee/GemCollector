@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     [field: SerializeField] public Weapon Weapon { get; private set; }
 
 
-    private EnemyStateMachine stateMachine;
+    public EnemyStateMachine stateMachine;
 
     void Awake()
     {
@@ -54,6 +54,9 @@ public class Enemy : MonoBehaviour
 
     void OnDie()
     {
+        Destroy(gameObject.transform.GetChild(1).gameObject);
+        GetComponent<CharacterController>().enabled = false;
+        Destroy(gameObject, 5f);
         Animator.SetTrigger("Die");
         enabled = false;
     }
