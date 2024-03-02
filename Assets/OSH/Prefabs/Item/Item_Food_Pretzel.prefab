@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5495017705338552006}
   - component: {fileID: 1891289415829740478}
   - component: {fileID: 760266248622215147}
+  - component: {fileID: 7436705000263774715}
   m_Layer: 0
   m_Name: Item_Food_Pretzel
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7436705000263774715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8547367113739066070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff962de1abb2cd47bb07e8ba87b82c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 617117a41aa8918468e3232eea707493, type: 2}
