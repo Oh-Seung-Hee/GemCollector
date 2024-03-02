@@ -50,7 +50,6 @@ public class Player : MonoBehaviour
     }
     void PlayerStatsInit()
     {
-        PlayerStats.MaxHealth = 100f;
         PlayerStats.AttackDamage = 50f;
         PlayerStats.AttackSpeed = 1f;
         PlayerStats.MoveSpeed = 1f;
