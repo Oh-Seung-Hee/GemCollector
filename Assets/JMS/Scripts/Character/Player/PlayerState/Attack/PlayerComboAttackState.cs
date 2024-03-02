@@ -74,7 +74,7 @@ public class PlayerComboAttackState : PlayerAttackState
 
             if (!alreadyAppliedDealing && normalizedTime >= attackInfoData.Dealing_Start_TransitionTime)
             {
-                stateMachine.Player.Weapon.SetAttack(attackInfoData.Damage, attackInfoData.Force);
+                stateMachine.Player.Weapon.SetAttack(stateMachine.Player.PlayerStats.AttackDamage * attackInfoData.Damage, attackInfoData.Force);
                 stateMachine.Player.Weapon.gameObject.SetActive(true);
                 alreadyAppliedDealing = true;
             }

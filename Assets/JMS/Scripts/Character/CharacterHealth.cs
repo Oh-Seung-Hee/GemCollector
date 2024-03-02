@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CharacterHealth : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 100;
-    private int health;
+    public float maxHealth = 100f;
+    private float health;
     public event Action OnDie;
     private Player Player;
     private Enemy Enemy;
@@ -24,7 +24,7 @@ public class CharacterHealth : MonoBehaviour
         health = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (health == 0) return;
 

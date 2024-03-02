@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public CharacterController Controller { get; private set; }
     public ForceReceiver ForceReceiver { get; private set; }
     public CharacterHealth CharacterHealth { get; private set; }
+    public PlayerStats PlayerStats { get; private set; }
 
     [field: SerializeField] public Weapon Weapon { get; private set; }
 
@@ -27,12 +28,14 @@ public class Player : MonoBehaviour
         Controller = GetComponent<CharacterController>();
         ForceReceiver = GetComponent<ForceReceiver>();
         CharacterHealth = GetComponent<CharacterHealth>();
+        PlayerStats = GetComponent<PlayerStats>();
 
         stateMachine = new PlayerStateMachine(this);
     }
 
     private void Start()
     {
+        PlayerStatsInit();
         stateMachine.ChangeState(stateMachine.IdleState);
         CharacterHealth.OnDie += OnDie;
     }
@@ -44,6 +47,14 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         stateMachine.PhysicsUpdate();
+    }
+    void PlayerStatsInit()
+    {
+        PlayerStats.MaxHealth = 100f;
+        PlayerStats.AttackDamage = 50f;
+        PlayerStats.AttackSpeed = 1f;
+        PlayerStats.MoveSpeed = 1f;
+        PlayerStats.JumpForce = 1f;
     }
     void OnDie()
     {

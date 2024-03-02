@@ -135,7 +135,7 @@ public class PlayerBaseState : IState
     }
     protected float GetMovemenetSpeed()
     {
-        float movementSpeed = stateMachine.MovementSpeed * stateMachine.MovementSpeedModifier;
+        float movementSpeed = stateMachine.MovementSpeed * stateMachine.MovementSpeedModifier * stateMachine.Player.PlayerStats.MoveSpeed;
         return movementSpeed;
     }
 
