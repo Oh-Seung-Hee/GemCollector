@@ -1,5 +1,5 @@
 {
-    "name": "CharacterInput",
+    "name": "CharacterInputAction",
     "maps": [
         {
             "name": "Player",
@@ -24,18 +24,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Jump",
+                    "name": "interaction",
                     "type": "Button",
-                    "id": "39e44401-1eff-4ad2-8455-29568193083c",
+                    "id": "125a3b9b-2389-4a98-bcc7-a388751a3282",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "interaction",
+                    "name": "Attack",
                     "type": "Button",
-                    "id": "125a3b9b-2389-4a98-bcc7-a388751a3282",
+                    "id": "739c05b2-7363-4663-a987-63cc58f3905a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "39e44401-1eff-4ad2-8455-29568193083c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -100,17 +109,6 @@
                 },
                 {
                     "name": "",
-                    "id": "ed9a02ec-3a6c-44a5-934e-070a30a69eac",
-                    "path": "<Keyboard>/leftShift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Run",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "68f2b409-72ee-4b69-8585-556c729e6ae4",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -128,6 +126,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ed9a02ec-3a6c-44a5-934e-070a30a69eac",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "56ac8b1e-156b-4c65-b7e5-46bda0776d55",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

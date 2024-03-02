@@ -2,17 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAirState : MonoBehaviour
+public class PlayerAirState : PlayerBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public PlayerAirState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Enter()
     {
-        
+        base.Enter();
+        StartAnimation(stateMachine.Player.AnimationData.AirParameterHash);
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        StopAnimation(stateMachine.Player.AnimationData.AirParameterHash);
+    }
+
+    protected override void Move(Vector3 movementDirection)
+    {
+        float movementSpeed = GetMovemenetSpeed();
+        stateMachine.Player.Controller.Move(
+            ((stateMachine.SaveDirection * movementSpeed)
+            + stateMachine.Player.ForceReceiver.Movement)
+            * Time.fixedDeltaTime
+            );
     }
 }

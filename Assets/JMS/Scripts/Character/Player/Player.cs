@@ -11,8 +11,13 @@ public class Player : MonoBehaviour
     public Animator Animator { get; private set; }
     public PlayerInput Input { get; private set; }
     public CharacterController Controller { get; private set; }
+    public ForceReceiver ForceReceiver { get; private set; }
+    public CharacterHealth CharacterHealth { get; private set; }
+    public PlayerStats PlayerStats { get; private set; }
 
-    private PlayerStateMachine stateMachine;
+    [field: SerializeField] public Weapon Weapon { get; private set; }
+
+    public PlayerStateMachine stateMachine;
 
     private void Awake()
     {
@@ -21,13 +26,18 @@ public class Player : MonoBehaviour
         Animator = GetComponentInChildren<Animator>();
         Input = GetComponent<PlayerInput>();
         Controller = GetComponent<CharacterController>();
+        ForceReceiver = GetComponent<ForceReceiver>();
+        CharacterHealth = GetComponent<CharacterHealth>();
+        PlayerStats = GetComponent<PlayerStats>();
 
         stateMachine = new PlayerStateMachine(this);
     }
 
     private void Start()
     {
+        PlayerStatsInit();
         stateMachine.ChangeState(stateMachine.IdleState);
+        CharacterHealth.OnDie += OnDie;
     }
     private void Update()
     {
@@ -37,5 +47,18 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         stateMachine.PhysicsUpdate();
+    }
+    void PlayerStatsInit()
+    {
+        PlayerStats.AttackDamage = 50f;
+        PlayerStats.AttackSpeed = 1f;
+        PlayerStats.MoveSpeed = 1f;
+        PlayerStats.JumpForce = 1f;
+    }
+    void OnDie()
+    {
+        Destroy(gameObject, 5f);
+        Animator.SetTrigger("Die");
+        enabled = false;
     }
 }

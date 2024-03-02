@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -13,6 +15,11 @@ public class PlayerAnimationData
     [SerializeField] private string jumpParameterName = "Jump";
     [SerializeField] private string fallParameterName = "Fall";
 
+    [SerializeField] private string attackParameterName = "@Attack";
+    [SerializeField] private string comboAttackParameterName = "ComboAttack";
+
+    [SerializeField] private string baseAttackParameterName = "BaseAttack";
+
     public int GroundParameterHash { get; private set; }
     public int IdleParameterHash { get; private set; }
     public int WalkParameterHash { get; private set; }
@@ -21,6 +28,11 @@ public class PlayerAnimationData
     public int AirParameterHash { get; private set; }
     public int JumpParameterHash { get; private set; }
     public int fallParameterHash { get; private set; }
+
+    public int AttackParameterHash { get; private set; }
+    public int ComboAttackParameterHash { get; private set; }
+
+    public int BaseAttackParameterHash { get; private set; }
 
     public void Initialize()
     {
@@ -32,5 +44,10 @@ public class PlayerAnimationData
         AirParameterHash = Animator.StringToHash(airParameterName);
         JumpParameterHash = Animator.StringToHash(jumpParameterName);
         fallParameterHash = Animator.StringToHash(fallParameterName);
+
+        AttackParameterHash = Animator.StringToHash(attackParameterName);
+        ComboAttackParameterHash = Animator.StringToHash(comboAttackParameterName);
+
+        BaseAttackParameterHash = Animator.StringToHash(baseAttackParameterName);
     }
 }

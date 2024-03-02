@@ -43,13 +43,24 @@ public class PlayerBaseState : IState
     {
         stateMachine.Player.Input.PlayerActions.Movement.canceled += OnMovementCanceled;
         stateMachine.Player.Input.PlayerActions.Run.started += OnRunStarted;
-    }
+        stateMachine.Player.Input.PlayerActions.Run.canceled += OnRunCanceled;
 
+        stateMachine.Player.Input.PlayerActions.Jump.started += OnJumpStarted;
+
+        stateMachine.Player.Input.PlayerActions.Attack.performed += OnAttackPerformed;
+        stateMachine.Player.Input.PlayerActions.Attack.canceled += OnAttackCanceled;
+    }
 
     private void RemoveInputActionsCallbacks()
     {
         stateMachine.Player.Input.PlayerActions.Movement.canceled -= OnMovementCanceled;
         stateMachine.Player.Input.PlayerActions.Run.started -= OnRunStarted;
+        stateMachine.Player.Input.PlayerActions.Run.canceled -= OnRunCanceled;
+
+        stateMachine.Player.Input.PlayerActions.Jump.started -= OnJumpStarted;
+
+        stateMachine.Player.Input.PlayerActions.Attack.performed -= OnAttackPerformed;
+        stateMachine.Player.Input.PlayerActions.Attack.canceled -= OnAttackCanceled;
     }
     protected virtual void OnMovementCanceled(InputAction.CallbackContext context)
     {
@@ -59,7 +70,22 @@ public class PlayerBaseState : IState
     {
         
     }
-
+    protected virtual void OnRunCanceled(InputAction.CallbackContext context)
+    {
+        
+    }
+    protected virtual void OnJumpStarted(InputAction.CallbackContext context)
+    {
+        
+    }
+    protected virtual void OnAttackPerformed(InputAction.CallbackContext context)
+    {
+        stateMachine.IsAttacking = true;
+    }
+    protected virtual void OnAttackCanceled(InputAction.CallbackContext context)
+    {
+        stateMachine.IsAttacking = false;
+    }
 
     private void ReadMovementInput()
     {
@@ -75,7 +101,7 @@ public class PlayerBaseState : IState
         Move(movementDirection);
     }
 
-    private Vector3 GetMovementDirection()
+    protected Vector3 GetMovementDirection()
     {
         Vector3 forward = stateMachine.MainCameraTransform.forward;
         Vector3 right = stateMachine.MainCameraTransform.right;
@@ -89,7 +115,7 @@ public class PlayerBaseState : IState
         return forward * stateMachine.MovementInput.y + right * stateMachine.MovementInput.x;
     }
 
-    private void Rotate(Vector3 movementDirection)
+    protected virtual void Rotate(Vector3 movementDirection)
     {
         if(movementDirection != Vector3.zero)
         {
@@ -98,16 +124,18 @@ public class PlayerBaseState : IState
         }
     }
 
-    private void Move(Vector3 movementDirection)
+    protected virtual void Move(Vector3 movementDirection)
     {
         float movementSpeed = GetMovemenetSpeed();
         stateMachine.Player.Controller.Move(
-            (movementDirection * movementSpeed) * Time.fixedDeltaTime
+            ((movementDirection * movementSpeed)
+            + stateMachine.Player.ForceReceiver.Movement)
+            * Time.fixedDeltaTime
             );
     }
-    private float GetMovemenetSpeed()
+    protected float GetMovemenetSpeed()
     {
-        float movementSpeed = stateMachine.MovementSpeed * stateMachine.MovementSpeedModifier;
+        float movementSpeed = stateMachine.MovementSpeed * stateMachine.MovementSpeedModifier * stateMachine.Player.PlayerStats.MoveSpeed;
         return movementSpeed;
     }
 
@@ -120,6 +148,28 @@ public class PlayerBaseState : IState
     {
         stateMachine.Player.Animator.SetBool(animationHash, false);
     }
+    
+    protected void ForceMove()
+    {
+        stateMachine.Player.Controller.Move(stateMachine.Player.ForceReceiver.Movement * Time.deltaTime);
+    }
+    
+    protected float GetNormalizedTime(Animator animator, string tag)
+    {
+        AnimatorStateInfo currentInfo = animator.GetCurrentAnimatorStateInfo(0);
+        AnimatorStateInfo nextInfo = animator.GetNextAnimatorStateInfo(0);
 
-
+        if (animator.IsInTransition(0) && nextInfo.IsTag(tag))
+        {
+            return nextInfo.normalizedTime;
+        }
+        else if (!animator.IsInTransition(0) && currentInfo.IsTag(tag))
+        {
+            return currentInfo.normalizedTime;
+        }
+        else
+        {
+            return 0f;
+        }
+    }
 }
