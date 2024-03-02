@@ -12,6 +12,8 @@ public class PlayerHitState : PlayerBaseState
         if (stateMachine.Player.Controller.isGrounded)
             stateMachine.SaveDirection = GetMovementDirection();
         stateMachine.Player.Animator.SetTrigger("Hit");
+
+        stateMachine.IsAttacking = false;
     }
 
     public override void Exit()
