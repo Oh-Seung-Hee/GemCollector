@@ -8,8 +8,8 @@ public class PlayerStats : MonoBehaviour
     public float MaxHealth { get => GetMaxHealth(); set => SetMaxHealth(value); }
     public float AttackDamage { get; set; }
     public float AttackSpeed { get => GetAttackSpeed(); set => SetAttackSpeed(value); }
-    [field: Range(0f, 25f)] public float MoveSpeed { get; set; }
-    [field: Range(0f, 25f)] public float JumpForce { get; set; }
+    public float MoveSpeed { get; set; }
+    public float JumpForce { get; set; }
 
     void SetMaxHealth(float value)
     {

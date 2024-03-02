@@ -6,7 +6,7 @@ using UnityEngine;
 public class CharacterHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
-    private float health;
+    public float health;
     public event Action OnDie;
     private Player Player;
     private Enemy Enemy;
@@ -29,6 +29,8 @@ public class CharacterHealth : MonoBehaviour
         if (health == 0) return;
 
         health = Mathf.Max(health - damage, 0);
+        if (health > maxHealth)
+            health = maxHealth;
 
         if (health == 0)
             OnDie?.Invoke();
