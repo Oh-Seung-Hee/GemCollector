@@ -13,7 +13,7 @@ public class PlayerHealthBar : MonoBehaviour
     private void OnEnable()
     {
         if(player == null)
-            player = GameObject.FindWithTag("Player").GetComponent<Player>();
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     private void Update()
@@ -23,7 +23,10 @@ public class PlayerHealthBar : MonoBehaviour
 
     public void SetHealthUI()
     {
-        healthBar.transform.localScale = new Vector3(player.CharacterHealth.health / player.CharacterHealth.maxHealth, 1, 1);
-        heathText.text = $"{player.CharacterHealth.health} / {player.CharacterHealth.maxHealth}";
+        if(player != null)
+        {
+            healthBar.transform.localScale = new Vector3(player.CharacterHealth.health / player.CharacterHealth.maxHealth, 1, 1);
+            heathText.text = $"{player.CharacterHealth.health} / {player.CharacterHealth.maxHealth}";
+        }
     }
 }

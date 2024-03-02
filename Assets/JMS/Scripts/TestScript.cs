@@ -7,11 +7,19 @@ public class TestScript : MonoBehaviour
     [SerializeField] private GameObject enemyPrefab;
     float xPos;
     float zPos;
-    public void CreateGameObject(GameObject go)
+    public void CreateCharacter(GameObject go)
     {
-        Instantiate(go);
-        xPos = Random.Range(-10f, 10f);
-        zPos = Random.Range(-10f, 10f);
-        go.transform.position = new Vector3(xPos, 0, zPos);
+        if (go.name != "Player")
+        {
+            Instantiate(go);
+            xPos = Random.Range(-10f, 10f);
+            zPos = Random.Range(-10f, 10f);
+            go.transform.position = new Vector3(xPos, 0, zPos);
+        }
+        else
+        {
+            if (GameObject.FindWithTag("Player") == null)
+                Instantiate(go);
+        }
     }
 }

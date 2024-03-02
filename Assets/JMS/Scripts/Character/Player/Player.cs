@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
     }
     void OnDie()
     {
+        Destroy(gameObject, 5f);
         Animator.SetTrigger("Die");
         enabled = false;
     }

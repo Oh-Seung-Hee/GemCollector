@@ -20,7 +20,10 @@ public class PlayerStatsInfo : MonoBehaviour
 
     void SetStatsInfoUI()
     {
-        statsText.text = $"공격력     : {player.PlayerStats.AttackDamage}\n공격속도  : {player.PlayerStats.AttackSpeed}\n" +
+        if (player != null)
+        {
+            statsText.text = $"공격력     : {player.PlayerStats.AttackDamage}\n공격속도  : {player.PlayerStats.AttackSpeed}\n" +
             $"이동속도  : {player.PlayerStats.MoveSpeed}\n점프력     : {player.PlayerStats.JumpForce}";
+        }
     }
 }
