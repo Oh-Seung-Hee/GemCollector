@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Potion_0
+      name: Potion_P
       rect:
         serializedVersion: 2
         x: 27
@@ -131,7 +131,7 @@ TextureImporter:
         width: 14
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -144,15 +144,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potion_1
+      name: Potion_G
       rect:
         serializedVersion: 2
         x: 89
-        y: 13
+        y: 12
         width: 14
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potion_2
+      name: Potion_R
       rect:
         serializedVersion: 2
         x: 150
@@ -173,7 +173,7 @@ TextureImporter:
         width: 14
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potion_3
+      name: Potion_B
       rect:
         serializedVersion: 2
         x: 273
@@ -194,7 +194,7 @@ TextureImporter:
         width: 14
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Potion_0: -1973008824
-      Potion_1: -2083769986
-      Potion_2: 653541368
-      Potion_3: 1641827022
+      Potion_B: 1641827022
+      Potion_G: -2083769986
+      Potion_P: -1973008824
+      Potion_R: 653541368
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

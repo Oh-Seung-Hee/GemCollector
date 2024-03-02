@@ -10,9 +10,9 @@ public enum ItemType
 
 public enum ExpendableType
 {
-    MultiplyReward,
     SpeedUp,
-    PowerUp
+    PowerUp,
+    Heal
 }
 
 [System.Serializable]
