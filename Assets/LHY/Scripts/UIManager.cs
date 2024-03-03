@@ -78,6 +78,11 @@ public class UIManager : MonoBehaviour
             ShowEventTextPopup();
         }
     }
+
+    public void StartButtonOnClick()
+    {
+        ShowPopup("TypingText");
+    }
     public void SceneChange(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
