@@ -61,6 +61,12 @@ public class UIManager : MonoBehaviour
             isMenu = false;
         }
     }
+
+    public void ShowEventTextPopup()
+    {
+        ShowPopup("EventTextPopup");
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -69,8 +75,13 @@ public class UIManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            ShowPopup("Typing");
+            ShowEventTextPopup();
         }
+    }
+
+    public void StartButtonOnClick()
+    {
+        ShowPopup("TypingText");
     }
     public void SceneChange(string sceneName)
     {
