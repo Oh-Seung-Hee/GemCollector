@@ -61,6 +61,12 @@ public class UIManager : MonoBehaviour
             isMenu = false;
         }
     }
+
+    public void ShowEventTextPopup()
+    {
+        ShowPopup("EventTextPopup");
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

@@ -50,22 +50,26 @@ public class AudioManager : MonoBehaviour
         bgmSource.clip = mainBgmClip;
 
         bgmSource.Play();
-        //SettingsSoundData();
+        SettingsSoundData();
     }
     private void Update()
     {
         //
     }
 
-    /*
-     *방식 변경 추후 삭제
     public void SettingsSoundData()
     {
-        bgmVolumeScale = PlayerPrefs.GetFloat("BGMVolume");
-        sfxVolumeScale = PlayerPrefs.GetFloat("SFXVolume");
-        masterVolumeScale = PlayerPrefs.GetFloat("MasterVolume");
+
+        //audioMixer.SetFloat("Master", PlayerPrefs.GetFloat("Master"));
+        //audioMixer.SetFloat("BGM", PlayerPrefs.GetFloat("BGM"));
+        //audioMixer.SetFloat("SFX", PlayerPrefs.GetFloat("SFX"));
+        SetVolume("Master", PlayerPrefs.GetFloat("Master"));
+        SetVolume("BGM", PlayerPrefs.GetFloat("BGM"));
+        SetVolume("SFX", PlayerPrefs.GetFloat("SFX"));
+        //bgmVolumeScale = PlayerPrefs.GetFloat("BGMVolume");
+        //sfxVolumeScale = PlayerPrefs.GetFloat("SFXVolume");
+        //masterVolumeScale = PlayerPrefs.GetFloat("MasterVolume");
     }
-    */
     public void ToggleVolume(string exposedParam, bool isToggledOn)
     {
 
