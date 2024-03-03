@@ -75,7 +75,7 @@ public class UIManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            ShowPopup("Typing");
+            ShowEventTextPopup();
         }
     }
     public void SceneChange(string sceneName)
