@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7888223769811775246}
   - component: {fileID: 5294770672758956835}
   - component: {fileID: -452340571809371789}
+  - component: {fileID: 9158469482772107545}
   m_Layer: 0
   m_Name: Item_Gem_G
   m_TagString: Untagged
@@ -26,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5896554077882367581}
-  m_LocalRotation: {x: -0.693688, y: 0.13710217, z: 0.13710217, w: 0.693688}
-  m_LocalPosition: {x: 1.61, y: 0.54, z: -0.09170907}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: -89.981, y: 0, z: 22.119001}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &7888223769811775246
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -97,3 +98,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 88243eb414d814a49a1bde261f0613cf, type: 2}
+--- !u!135 &9158469482772107545
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5896554077882367581}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.2326107
+  m_Center: {x: 0, y: 0.00000023841864, z: -0.31269112}

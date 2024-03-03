@@ -18,22 +18,22 @@ public class Inventory : MonoBehaviour
     public ItemSlotUI[] uiSlots;
     public ItemSlot[] slots;
 
-    public GameObject inventoryWindow;
+    //public GameObject inventoryWindow;
     public Transform dropPosition;
 
     [Header("Selected Item")]
     private ItemSlot selectedItem;
     private int selectedItemIndex;
-    public TextMeshPro selectedItemName;
-    public TextMeshPro selectedItemDescription;
+    public TextMeshProUGUI selectedItemName;
+    public TextMeshProUGUI selectedItemDescription;
     public GameObject useButton;
 
     //private PlayerController controller;
     //private PlayerConditions condition;
 
     [Header("Events")]
-    public UnityEvent onOpenInventory;
-    public UnityEvent onCloseInventory;
+    //public UnityEvent onOpenInventory;
+    //public UnityEvent onCloseInventory;
 
     public static Inventory instance;
 
@@ -84,7 +84,7 @@ public class Inventory : MonoBehaviour
             return;
         }
 
-        //ThrowItem(_item);
+        ThrowItem(_item);
     }
 
     ItemSlot GetItemStack(ItemData _item)

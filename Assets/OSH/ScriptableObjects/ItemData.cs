@@ -20,6 +20,7 @@ public class ItemDataExpendable
 {
     public ExpendableType type;
     public float value;
+    public float time;
 }
 
 [CreateAssetMenu(fileName = "Item", menuName = "New Item")]
@@ -31,9 +32,6 @@ public class ItemData : ScriptableObject
     public ItemType type;
     public Sprite icon;
     public GameObject dropPrefab;
-
-    //[Header("Stat")]
-    //public float value;
 
     [Header("Stacking")]
     public bool canStack;

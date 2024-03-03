@@ -23,4 +23,5 @@ MonoBehaviour:
   maxStackAmount: 0
   expendables:
   - type: 0
-    value: 0
+    value: 2
+    time: 5
