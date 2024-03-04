@@ -14,7 +14,6 @@ public class Inventory : MonoBehaviour
     [Header("Selected Item")]
     private ItemSlot selectedItem;
     private int selectedItemIndex;
-    public GameObject useButton;
 
     private PlayerStats playerStats;
     private CharacterHealth characterHealth;

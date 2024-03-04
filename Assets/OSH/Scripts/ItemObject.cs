@@ -8,13 +8,14 @@ public class ItemObject : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-        if(Inventory.instance.GetEmptySlot() != null)
+        if (Inventory.instance.GetEmptySlot() != null)
         {
             Inventory.instance.AddItem(item);
             Destroy(gameObject);
         }
     }
 
+    // 아이템이 플레이어와 닿았을 때
     private void OnTriggerEnter(Collider _other)
     {
         if (_other.CompareTag("Player"))

@@ -5,18 +5,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,IPointerClickHandler
+public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [SerializeField] private GameObject itemInfoUI;
-    public TextMeshProUGUI selectedItemName;
-    public TextMeshProUGUI selectedItemDescription;
+    [SerializeField] private TextMeshProUGUI selectedItemName;
+    [SerializeField] private TextMeshProUGUI selectedItemDescription;
 
-    public Button button;
     public Image icon;
     private ItemSlot curSlot;
 
     public int index;
 
+    // 슬롯 창 설정 초기화
     public void Set(ItemSlot _slot)
     {
         curSlot = _slot;
@@ -24,6 +24,7 @@ public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         icon.sprite = _slot.item.icon;
     }
 
+    // 슬롯 창 초기화
     public void Clear()
     {
         curSlot = null;
@@ -54,7 +55,8 @@ public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         selectedItemDescription.text = _description;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    // 인벤토리창 클릭했을 때
+    public void OnPointerClick(PointerEventData _eventData)
     {
         // 아이템이 존재하지 않을 때
         if (Inventory.instance.slots[index].item == null)
