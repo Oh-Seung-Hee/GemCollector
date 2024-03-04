@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Item_Potion_G
   m_EditorClassIdentifier: 
   displayName: "\uB179\uC999"
-  description: "\uB9DB\uC5C6\uB294 \uB179\uC999\uC744 \uBA39\uC73C\uBA74 5\uCD08\uB3D9\uC548
-    \uC2A4\uD53C\uB4DC\uAC00 1.5\uBC30 \uC99D\uAC00\uD569\uB2C8\uB2E4."
+  description: "\uB9DB\uC5C6\uB294 \uB179\uC999\uC744 \uBA39\uC73C\uBA74 \uC2A4\uD53C\uB4DC\uAC00
+    5% \uC99D\uAC00\uD569\uB2C8\uB2E4."
   type: 0
   icon: {fileID: -2083769986, guid: a80ca0dbd9cf9584abf7bc75a17541de, type: 3}
   dropPrefab: {fileID: 2974795312755664466, guid: 124daf3ee14f69548854f057d6fff3ef,
@@ -23,5 +23,4 @@ MonoBehaviour:
   maxStackAmount: 0
   expendables:
   - type: 0
-    value: 1.5
-    time: 5
+    value: 1.05

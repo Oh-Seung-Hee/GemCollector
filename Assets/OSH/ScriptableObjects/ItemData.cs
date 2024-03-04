@@ -20,7 +20,6 @@ public class ItemDataExpendable
 {
     public ExpendableType type;
     public float value;
-    public float time;
 }
 
 [CreateAssetMenu(fileName = "Item", menuName = "New Item")]

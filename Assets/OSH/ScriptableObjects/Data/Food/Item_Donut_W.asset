@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: "\uD654\uC774\uD2B8 \uCD08\uCF54 \uB3C4\uB11B"
   description: "\uB2EC\uB2EC\uD55C \uD654\uC774\uD2B8 \uCD08\uCF54 \uB3C4\uB11B\uC744
-    \uBA39\uC73C\uBA74 \uACF5\uACA9\uB825\uC774 10\uCD08\uB3D9\uC548 2\uBC30 \uC99D\uAC00\uD569\uB2C8\uB2E4."
+    \uBA39\uC73C\uBA74 \uACF5\uACA9\uB825\uC774 10% \uC99D\uAC00\uD569\uB2C8\uB2E4."
   type: 0
   icon: {fileID: -281092519, guid: a77193fc5750f4e4e8680158017735c0, type: 3}
   dropPrefab: {fileID: 7033540984931334791, guid: f08c882db64cdfd478e3e48f05f5a464,
@@ -23,5 +23,4 @@ MonoBehaviour:
   maxStackAmount: 0
   expendables:
   - type: 1
-    value: 2
-    time: 10
+    value: 1.1
