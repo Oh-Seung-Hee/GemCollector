@@ -137,9 +137,9 @@ public class Inventory : MonoBehaviour
                         characterHealth.health += characterHealth.maxHealth * selectedItem.item.expendables[i].value; break;
                 }
             }
-        }
 
-        RemoveSelectedItem();
+            RemoveSelectedItem();
+        }
     }
 
     // 아이템 제거
