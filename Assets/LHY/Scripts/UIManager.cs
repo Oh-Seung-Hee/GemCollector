@@ -8,11 +8,21 @@ using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
-    TypingEffect typingeffect { get; set; }
+    #region Singleton
+    public static UIManager instance;
+    private void Awake()
+    {
+        //todo : main아닌 다른 씬에도 필요할지?
+        DontDestroyOnLoad(gameObject);
 
-    private static UIManager _singleton = new UIManager();
-    public static UIManager Get() { return _singleton; }
-    public static bool Has() { return _singleton != null; }
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+    }
+    #endregion
 
     private List<UIPopup> popups = new List<UIPopup>();
     private bool isMenu = false;
@@ -77,6 +87,11 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             ShowEventTextPopup();
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            AudioManager.instance.PlaySFX(AudioManager.instance.uiSelectClip);
+            ShowPopup("Inventory");
         }
     }
 
