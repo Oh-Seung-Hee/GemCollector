@@ -21,3 +21,4 @@ MonoBehaviour:
   canStack: 1
   maxStackAmount: 25
   expendables: []
+  color: 1
