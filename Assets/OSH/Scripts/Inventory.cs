@@ -1,11 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.InputSystem;
-using static UnityEditor.Progress;
 
 public class ItemSlot
 {
@@ -17,8 +10,6 @@ public class Inventory : MonoBehaviour
 {
     public ItemSlotUI[] uiSlots;
     public ItemSlot[] slots;
-
-    public Transform dropPosition;
 
     [Header("Selected Item")]
     private ItemSlot selectedItem;
@@ -33,7 +24,11 @@ public class Inventory : MonoBehaviour
     void Awake()
     {
         // 싱글톤
-        instance = this;
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+
         playerStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
         characterHealth = GameObject.FindWithTag("Player").GetComponent<CharacterHealth>();
     }
@@ -135,9 +130,9 @@ public class Inventory : MonoBehaviour
                 switch (selectedItem.item.expendables[i].type)
                 {
                     case ExpendableType.SpeedUp:
-                        playerStats.MoveSpeed += playerStats.MoveSpeed * selectedItem.item.expendables[i].value; break;
+                        playerStats.MoveSpeed = playerStats.MoveSpeed * selectedItem.item.expendables[i].value; break;
                     case ExpendableType.PowerUp:
-                        playerStats.AttackDamage += playerStats.AttackDamage * selectedItem.item.expendables[i].value; break;
+                        playerStats.AttackDamage = playerStats.AttackDamage * selectedItem.item.expendables[i].value; break;
                     case ExpendableType.Heal:
                         characterHealth.health += characterHealth.maxHealth * selectedItem.item.expendables[i].value; break;
                 }
