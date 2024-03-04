@@ -11,4 +11,12 @@ public class ItemObject : MonoBehaviour, IInteractable
         Inventory.instance.AddItem(item);
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter(Collider _other)
+    {
+        if (_other.CompareTag("Player"))
+        {
+            OnInteract();
+        }
+    }
 }
