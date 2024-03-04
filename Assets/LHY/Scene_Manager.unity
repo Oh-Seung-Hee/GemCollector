@@ -541,7 +541,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7584173671991596425, guid: 900e099e9ab018b479c6a53f04b21159,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -746,7 +746,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 828536013970147413, guid: 900e099e9ab018b479c6a53f04b21159,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1004,9 +1004,12 @@ MonoBehaviour:
   mainBgmClip: {fileID: 8300000, guid: d418d10f6961d32428944d10fffd9003, type: 3}
   introBgmClip: {fileID: 0}
   walkClip: {fileID: 0}
-  jumpClip: {fileID: 0}
-  getItemClip: {fileID: 0}
-  uiSelectClip: {fileID: 0}
+  jumpClip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  getItemClip: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
+  uiSelectClip: {fileID: 8300000, guid: 061e4a0f6abad814bbef769c701cffb5, type: 3}
+  playerAttackClip: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+  startClip: {fileID: 8300000, guid: 2445826122c3c8540b95ad6d49d773af, type: 3}
+  clearClip: {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
   audioMixer: {fileID: 24100000, guid: 900e099e9ab018b479c6a53f04b21159, type: 2}
 --- !u!4 &1864468693
 Transform:

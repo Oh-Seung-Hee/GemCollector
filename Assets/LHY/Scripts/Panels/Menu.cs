@@ -24,7 +24,6 @@ public class Menu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            AudioManager.instance.PlaySFX(AudioManager.instance.uiSelectClip);
             Debug.Log("menu를 삭제합니다.");
             Resume();
         }
@@ -46,7 +45,7 @@ public class Menu : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1.0f;
-        Destroy(gameObject);
+        Destroy(transform.root.gameObject);
     }
 
     //todo : 분리
