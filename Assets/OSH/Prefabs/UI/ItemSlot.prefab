@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5186161182972859236}
   - component: {fileID: 9123932377249513912}
   - component: {fileID: 8362590523428660553}
-  - component: {fileID: 7391791929153519488}
   - component: {fileID: 2078988791192801916}
   m_Layer: 5
   m_Name: ItemSlot
@@ -98,19 +97,6 @@ MonoBehaviour:
   button: {fileID: 0}
   icon: {fileID: 8807819319944472422}
   index: 0
---- !u!114 &7391791929153519488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6637828624980327394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f6c2a6b5bfe564c80f76a79936493f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemInfoUI: {fileID: 0}
 --- !u!114 &2078988791192801916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +113,20 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 5108839511120706375, guid: cb8147ec9abdffa48a67aae757354625,
+            type: 3}
+          m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+          m_MethodName: OnUseButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7391337436160186740
 GameObject:
   m_ObjectHideFlags: 0
