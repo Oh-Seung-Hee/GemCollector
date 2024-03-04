@@ -71,6 +71,7 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            AudioManager.instance.PlaySFX(AudioManager.instance.uiSelectClip);
             ShowMenuPopup();
         }
         if (Input.GetKeyDown(KeyCode.A))

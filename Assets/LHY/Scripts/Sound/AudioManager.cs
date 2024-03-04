@@ -31,6 +31,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip jumpClip;
     public AudioClip getItemClip;
     public AudioClip uiSelectClip;
+    public AudioClip playerAttackClip;
+    public AudioClip startClip;
+    public AudioClip clearClip;
 
     [SerializeField] private AudioMixer audioMixer;
 
