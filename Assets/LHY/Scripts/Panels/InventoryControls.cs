@@ -4,29 +4,11 @@ using UnityEngine;
 
 public class InventoryControls : MonoBehaviour
 {
-    private bool isActive = false;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            if (isActive)
-            {
-                isActive = false;
-                Able();
-            }
-            else
-            {
-                isActive = true;
-                Disable();
-            }
+            transform.GetChild(0).gameObject.SetActive(!transform.GetChild(0).gameObject.activeSelf);
         }
-    }
-    public void Disable()
-    {
-        gameObject.SetActive(false);
-    }
-    public void Able()
-    {
-        gameObject.SetActive(true);
     }
 }

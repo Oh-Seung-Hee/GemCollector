@@ -41,6 +41,8 @@ public class PlayerBaseState : IState
 
     private void AddInputActionsCallbacks()
     {
+        stateMachine.Player.Input.PlayerActions.StatsInfo.started += OnStatsInfo;
+
         stateMachine.Player.Input.PlayerActions.Movement.canceled += OnMovementCanceled;
         stateMachine.Player.Input.PlayerActions.Run.started += OnRunStarted;
         stateMachine.Player.Input.PlayerActions.Run.canceled += OnRunCanceled;
@@ -53,6 +55,8 @@ public class PlayerBaseState : IState
 
     private void RemoveInputActionsCallbacks()
     {
+        stateMachine.Player.Input.PlayerActions.StatsInfo.started -= OnStatsInfo;
+
         stateMachine.Player.Input.PlayerActions.Movement.canceled -= OnMovementCanceled;
         stateMachine.Player.Input.PlayerActions.Run.started -= OnRunStarted;
         stateMachine.Player.Input.PlayerActions.Run.canceled -= OnRunCanceled;
@@ -61,6 +65,10 @@ public class PlayerBaseState : IState
 
         stateMachine.Player.Input.PlayerActions.Attack.performed -= OnAttackPerformed;
         stateMachine.Player.Input.PlayerActions.Attack.canceled -= OnAttackCanceled;
+    }
+    private void OnStatsInfo(InputAction.CallbackContext context)
+    {
+        stateMachine.Player.transform.GetChild(4).gameObject.SetActive(!stateMachine.Player.transform.GetChild(4).gameObject.activeSelf);
     }
     protected virtual void OnMovementCanceled(InputAction.CallbackContext context)
     {

@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 1137696902007232998}
   - component: {fileID: 8230911347967178739}
   - component: {fileID: 2362293698112072308}
-  - component: {fileID: 1633682702295999292}
+  - component: {fileID: 8643714752038072736}
   m_Layer: 5
   m_Name: Inventory_Canvas
   m_TagString: Untagged
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1633682702295999292
+--- !u!114 &8643714752038072736
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -750,6 +750,7 @@ MonoBehaviour:
   - {fileID: 1710727737159027304}
   - {fileID: 1866783838477166936}
   - {fileID: 6875014270207809573}
+  clearCondition: 5
 --- !u!114 &3092446173813876583
 MonoBehaviour:
   m_ObjectHideFlags: 0

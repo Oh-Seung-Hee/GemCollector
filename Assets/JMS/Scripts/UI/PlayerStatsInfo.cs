@@ -7,6 +7,7 @@ public class PlayerStatsInfo : MonoBehaviour
 {
     Player player;
     [SerializeField] private TMP_Text statsText;
+
     private void OnEnable()
     {
         if (player == null)
