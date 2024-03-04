@@ -74,8 +74,6 @@ public class Inventory : MonoBehaviour
             UpdateUI();
             return;
         }
-
-        ThrowItem(_item);
     }
 
     // 획득한 아이템이 기존에 획득했던 Gem인지 확인
@@ -91,7 +89,7 @@ public class Inventory : MonoBehaviour
     }
 
     // 비어있는 슬롯 확인
-    ItemSlot GetEmptySlot()
+    public ItemSlot GetEmptySlot()
     {
         for (int i = 0; i < slots.Length; i++)
         {
@@ -116,12 +114,6 @@ public class Inventory : MonoBehaviour
                 uiSlots[i].Clear();
             }
         }
-    }
-
-    // 아이템 던지기
-    void ThrowItem(ItemData item)
-    {
-        Instantiate(item.dropPrefab, dropPosition.position, Quaternion.Euler(Vector3.one * Random.value * 360f));
     }
 
     // 아이템 선택

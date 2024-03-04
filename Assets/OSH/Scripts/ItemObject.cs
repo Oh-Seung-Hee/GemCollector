@@ -8,8 +8,11 @@ public class ItemObject : MonoBehaviour, IInteractable
 
     public void OnInteract()
     {
-        Inventory.instance.AddItem(item);
-        Destroy(gameObject);
+        if(Inventory.instance.GetEmptySlot() != null)
+        {
+            Inventory.instance.AddItem(item);
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider _other)
