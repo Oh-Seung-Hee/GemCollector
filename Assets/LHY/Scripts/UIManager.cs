@@ -90,8 +90,8 @@ public class UIManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
-            AudioManager.instance.PlaySFX(AudioManager.instance.uiSelectClip);
-            ShowPopup("Inventory");
+            AudioManager.instance.PlaySFX(AudioManager.instance.playerAttackClip);
+            ShowPopup("Inventory_Canvas");
         }
     }
 
