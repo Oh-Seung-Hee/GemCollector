@@ -15,6 +15,16 @@ public enum ExpendableType
     Heal
 }
 
+public enum GemColorType
+{
+    none,
+    Red,
+    Orange,
+    Yellow,
+    Green,
+    Blue
+}
+
 [System.Serializable]
 public class ItemDataExpendable
 {
@@ -38,4 +48,7 @@ public class ItemData : ScriptableObject
 
     [Header("Expendable")]
     public ItemDataExpendable[] expendables;
+    
+    [Header("GemColor")]
+    public GemColorType color;
 }
