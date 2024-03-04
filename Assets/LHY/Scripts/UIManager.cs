@@ -26,7 +26,8 @@ public class UIManager : MonoBehaviour
 
     private List<UIPopup> popups = new List<UIPopup>();
     private bool isMenu = false;
-
+    private bool isInventory = false;
+    private bool isInformation = false;
     public UIPopup ShowPopup(string popupname)
     {
         var obj = Resources.Load("Popups/" + popupname, typeof(GameObject)) as GameObject;
@@ -100,14 +101,15 @@ public class UIManager : MonoBehaviour
             AudioManager.instance.PlaySFX(AudioManager.instance.uiSelectClip);
             ShowMenuPopup();
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            ShowEventTextPopup();
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            AudioManager.instance.PlaySFX(AudioManager.instance.uiSelectClip);
-            ShowPopup("Inventory");
+            if (!isInformation)
+            {
+                AudioManager.instance.PlaySFX(AudioManager.instance.uiSelectClip);
+                ShowPopup("PlayerStatsInfoUI");
+            }
+            isInformation = true;
         }
     }
 
