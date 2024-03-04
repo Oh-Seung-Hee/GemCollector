@@ -101,16 +101,6 @@ public class UIManager : MonoBehaviour
             AudioManager.instance.PlaySFX(AudioManager.instance.uiSelectClip);
             ShowMenuPopup();
         }
-        
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            if (!isInformation)
-            {
-                AudioManager.instance.PlaySFX(AudioManager.instance.uiSelectClip);
-                ShowPopup("PlayerStatsInfoUI");
-            }
-            isInformation = true;
-        }
     }
 
     public void StartButtonOnClick()

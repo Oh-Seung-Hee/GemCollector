@@ -71,6 +71,15 @@ public partial class @CharacterInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""StatsInfo"",
+                    ""type"": ""Button"",
+                    ""id"": ""d94ac939-35a4-4760-b037-52bff09e1dbf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -172,6 +181,17 @@ public partial class @CharacterInputAction: IInputActionCollection2, IDisposable
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""16edb0b7-60b3-4541-9cc6-ab543707fe8d"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StatsInfo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -185,6 +205,7 @@ public partial class @CharacterInputAction: IInputActionCollection2, IDisposable
         m_Player_interaction = m_Player.FindAction("interaction", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_StatsInfo = m_Player.FindAction("StatsInfo", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -251,6 +272,7 @@ public partial class @CharacterInputAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_interaction;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_StatsInfo;
     public struct PlayerActions
     {
         private @CharacterInputAction m_Wrapper;
@@ -260,6 +282,7 @@ public partial class @CharacterInputAction: IInputActionCollection2, IDisposable
         public InputAction @interaction => m_Wrapper.m_Player_interaction;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @StatsInfo => m_Wrapper.m_Player_StatsInfo;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -284,6 +307,9 @@ public partial class @CharacterInputAction: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @StatsInfo.started += instance.OnStatsInfo;
+            @StatsInfo.performed += instance.OnStatsInfo;
+            @StatsInfo.canceled += instance.OnStatsInfo;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -303,6 +329,9 @@ public partial class @CharacterInputAction: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @StatsInfo.started -= instance.OnStatsInfo;
+            @StatsInfo.performed -= instance.OnStatsInfo;
+            @StatsInfo.canceled -= instance.OnStatsInfo;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -327,5 +356,6 @@ public partial class @CharacterInputAction: IInputActionCollection2, IDisposable
         void OnInteraction(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnStatsInfo(InputAction.CallbackContext context);
     }
 }

@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
 
         UIManager.instance.ShowPopup("PlayerHealthBarUI", gameObject.transform);
         UIManager.instance.ShowPopup("Inventory_Canvas", gameObject.transform);
+        UIManager.instance.ShowPopup("PlayerStatsInfoUI", gameObject.transform);
     }
     private void Update()
     {
