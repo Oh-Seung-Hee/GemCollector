@@ -18,6 +18,8 @@ public class PlayerJumpState : PlayerAirState
         base.Enter();
 
         StartAnimation(stateMachine.Player.AnimationData.JumpParameterHash);
+
+        AudioManager.instance.PlaySFX(AudioManager.instance.jumpClip);
     }
 
     public override void Exit()
