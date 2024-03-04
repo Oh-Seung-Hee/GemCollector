@@ -24,5 +24,14 @@ public class ItemObject : MonoBehaviour, IInteractable
             AudioManager.instance.PlaySFX(AudioManager.instance.getItemClip);
             OnInteract();
         }
+
+        if (gameObject.CompareTag("Gem"))
+        {
+            // 5개 종류 다 획득 시
+            if (Inventory.instance.clearCondition == 0)
+            {
+                UIManager.instance.ShowPopup("ClearPopup");
+            }
+        }
     }
 }
