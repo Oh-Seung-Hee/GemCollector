@@ -12,6 +12,7 @@ public enum ExpendableType
 {
     SpeedUp,
     PowerUp,
+    AttackSpeedUP,
     Heal
 }
 

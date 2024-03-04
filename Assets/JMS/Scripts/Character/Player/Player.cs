@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         CharacterHealth = GetComponent<CharacterHealth>();
         PlayerStats = GetComponent<PlayerStats>();
 
-        stateMachine = new PlayerStateMachine(this);
+        stateMachine = new PlayerStateMachine(this); 
     }
 
     private void Start()
@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         CharacterHealth.OnDie += OnDie;
 
         UIManager.instance.ShowPopup("PlayerHealthBarUI", gameObject.transform);
+        UIManager.instance.ShowPopup("Inventory_Canvas", gameObject.transform);
     }
     private void Update()
     {

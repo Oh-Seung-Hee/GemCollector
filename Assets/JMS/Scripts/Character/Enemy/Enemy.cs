@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
     {
         ItemIndex = Random.Range(0, GameManager.Instance.DropItems.Count);
         GameObject item = Instantiate(GameManager.Instance.DropItems[ItemIndex]);
-        item.transform.position = transform.position;
+        item.transform.position = new Vector3(transform.position.x, 1, transform.position.z);
 
         if (item.CompareTag("Gem"))
         {

@@ -43,6 +43,8 @@ public class Inventory : MonoBehaviour
             uiSlots[i].index = i;
             uiSlots[i].Clear();
         }
+
+        gameObject.SetActive(false);
     }
 
     // 인벤토리에 아이템 추가
@@ -140,6 +142,8 @@ public class Inventory : MonoBehaviour
                         playerStats.MoveSpeed = playerStats.MoveSpeed * selectedItem.item.expendables[i].value; break;
                     case ExpendableType.PowerUp:
                         playerStats.AttackDamage = playerStats.AttackDamage * selectedItem.item.expendables[i].value; break;
+                    case ExpendableType.AttackSpeedUP:
+                        playerStats.AttackSpeed = playerStats.AttackSpeed * selectedItem.item.expendables[i].value; break;
                     case ExpendableType.Heal:
                         characterHealth.health += characterHealth.maxHealth * selectedItem.item.expendables[i].value;
                         if(characterHealth.health > characterHealth.maxHealth)
