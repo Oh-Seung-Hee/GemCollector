@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
 
     [field: SerializeField] public Weapon Weapon { get; private set; }
 
+    private int ItemIndex;
 
     public EnemyStateMachine stateMachine;
 
@@ -59,5 +60,18 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject, 5f);
         Animator.SetTrigger("Die");
         enabled = false;
+        DropItem();
+    }
+
+    void DropItem()
+    {
+        ItemIndex = Random.Range(0, GameManager.Instance.DropItems.Count);
+        GameObject item = Instantiate(GameManager.Instance.DropItems[ItemIndex]);
+        item.transform.position = transform.position;
+
+        if (item.CompareTag("Gem"))
+        {
+            GameManager.Instance.DropItems.RemoveAt(ItemIndex);
+        }
     }
 }

@@ -146,7 +146,9 @@ public class Inventory : MonoBehaviour
                     case ExpendableType.PowerUp:
                         playerStats.AttackDamage = playerStats.AttackDamage * selectedItem.item.expendables[i].value; break;
                     case ExpendableType.Heal:
-                        characterHealth.health += characterHealth.maxHealth * selectedItem.item.expendables[i].value; break;
+                        characterHealth.health += characterHealth.maxHealth * selectedItem.item.expendables[i].value;
+                        if(characterHealth.health > characterHealth.maxHealth)
+                            characterHealth.health = characterHealth.maxHealth; break;
                 }
             }
 
