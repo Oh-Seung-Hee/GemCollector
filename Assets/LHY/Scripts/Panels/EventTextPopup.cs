@@ -18,7 +18,7 @@ public class EventTextPopup : MonoBehaviour
 
         transform.DOMove(new Vector3(960, 540 + 400 + 300, 0), UpSpeed).SetEase(Ease.OutQuad).SetDelay(StopTime);
 
-        Destroy(gameObject, 5f);
+        Destroy(transform.root.gameObject, 5f);
     }
 
 }
