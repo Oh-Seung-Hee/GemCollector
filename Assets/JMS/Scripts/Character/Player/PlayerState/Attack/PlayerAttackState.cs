@@ -16,6 +16,8 @@ public class PlayerAttackState : PlayerBaseState
         base.Enter();
 
         StartAnimation(stateMachine.Player.AnimationData.AttackParameterHash);
+
+        AudioManager.instance.PlaySFX(AudioManager.instance.playerAttackClip);
     }
 
     public override void Exit()

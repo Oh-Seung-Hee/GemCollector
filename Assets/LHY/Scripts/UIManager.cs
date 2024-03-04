@@ -38,6 +38,17 @@ public class UIManager : MonoBehaviour
         return ShowPopupWithPrefab(obj, popupname);
     }
 
+    public UIPopup ShowPopup(string popupname, Transform transform)
+    {
+        var obj = Resources.Load("Popups/" + popupname, typeof(GameObject)) as GameObject;
+        if (!obj)
+        {
+            //Debug.LogWarning("Failed to ShowPopup({0})".SFormat(popupname));
+            return null;
+        }
+        return ShowPopupWithPrefab(obj, popupname, transform);
+    }
+
     public T ShowPopup<T>() where T : UIPopup
     {
         return ShowPopup(typeof(T).Name) as T;
@@ -46,6 +57,11 @@ public class UIManager : MonoBehaviour
     public UIPopup ShowPopupWithPrefab(GameObject prefab, string popupName)
     {
         var obj = Instantiate(prefab);
+        return ShowPopup(obj, popupName);
+    }
+    public UIPopup ShowPopupWithPrefab(GameObject prefab, string popupName, Transform transform)
+    {
+        var obj = Instantiate(prefab, transform);
         return ShowPopup(obj, popupName);
     }
 

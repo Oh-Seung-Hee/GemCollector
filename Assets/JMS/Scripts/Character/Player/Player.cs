@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
         PlayerStatsInit();
         stateMachine.ChangeState(stateMachine.IdleState);
         CharacterHealth.OnDie += OnDie;
+
+        UIManager.instance.ShowPopup("PlayerHealthBarUI", gameObject.transform);
     }
     private void Update()
     {
