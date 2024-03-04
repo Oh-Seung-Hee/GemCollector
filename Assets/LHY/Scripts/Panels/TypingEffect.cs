@@ -60,6 +60,7 @@ public class TypingEffect : MonoBehaviour
         if (startReady)
         {
             startReady = false;
+            AudioManager.instance.PlaySFX(AudioManager.instance.startClip);
             SceneManager.LoadScene(sceneName);
         }
         else
