@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ItemSlot
@@ -14,7 +15,6 @@ public class Inventory : MonoBehaviour
     [Header("Selected Item")]
     private ItemSlot selectedItem;
     private int selectedItemIndex;
-    public GameObject useButton;
 
     private PlayerStats playerStats;
     private CharacterHealth characterHealth;
@@ -56,6 +56,8 @@ public class Inventory : MonoBehaviour
             {
                 slotToStackTo.quantity++;
                 UpdateUI();
+                
+                GemUI.instance.UpdateGemUI(UpdateGemUI(slotToStackTo), slotToStackTo.quantity);
                 return;
             }
         }
@@ -69,6 +71,11 @@ public class Inventory : MonoBehaviour
             UpdateUI();
             return;
         }
+    }
+
+    private GemColorType UpdateGemUI(ItemSlot _slot)
+    {
+        return _slot.item.color;
     }
 
     // 획득한 아이템이 기존에 획득했던 Gem인지 확인

@@ -15,9 +15,10 @@ MonoBehaviour:
   displayName: "\uC8FC\uD669\uBCF4\uC11D"
   description: "\uD50C\uB808\uC774\uC5B4\uAC00 \uBAA8\uC544\uC57C \uD560 \uC8FC\uD669\uBCF4\uC11D\uC785\uB2C8\uB2E4."
   type: 1
-  icon: {fileID: 21300000, guid: 66e0bc39940e731488c0b08b25b0c546, type: 3}
+  icon: {fileID: 1313937841, guid: 0454ded6f0b8b3646b8976336188782a, type: 3}
   dropPrefab: {fileID: 2148884106995589968, guid: 71a9fb7333fb3c34f99e641481be3034,
     type: 3}
   canStack: 1
   maxStackAmount: 25
   expendables: []
+  color: 2
