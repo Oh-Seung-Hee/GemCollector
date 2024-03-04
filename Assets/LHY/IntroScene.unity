@@ -1367,7 +1367,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uAC8C\uC784\uC758 \uC81C\uBAA9\uC785\uB2C8\uB2E4."
+  m_text: GEM Collector Knight
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2994b0c8f3d953f4c9890bad687ca1fc, type: 2}
   m_sharedMaterial: {fileID: -9026417418125551050, guid: 2994b0c8f3d953f4c9890bad687ca1fc,
@@ -1377,8 +1377,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4284111450
+  m_fontColor: {r: 0.3529412, g: 0.3529412, b: 0.3529412, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
