@@ -113,20 +113,7 @@ MonoBehaviour:
   - eventID: 2
     callback:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5108839511120706375, guid: cb8147ec9abdffa48a67aae757354625,
-            type: 3}
-          m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-          m_MethodName: OnUseButton
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!1 &7391337436160186740
 GameObject:
   m_ObjectHideFlags: 0
