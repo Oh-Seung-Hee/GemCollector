@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
     }
     void OnDie()
     {
+        UIManager.instance.ShowPopup("ClearPopup");
         Destroy(gameObject, 5f);
         Animator.SetTrigger("Die");
         enabled = false;
