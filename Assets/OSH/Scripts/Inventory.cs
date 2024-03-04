@@ -144,11 +144,11 @@ public class Inventory : MonoBehaviour
                 switch (selectedItem.item.expendables[i].type)
                 {
                     case ExpendableType.SpeedUp:
-                        playerStats.MoveSpeed = playerStats.MoveSpeed * selectedItem.item.expendables[i].value; break;
+                        playerStats.MoveSpeed += selectedItem.item.expendables[i].value; break;
                     case ExpendableType.PowerUp:
-                        playerStats.AttackDamage = playerStats.AttackDamage * selectedItem.item.expendables[i].value; break;
+                        playerStats.AttackDamage += selectedItem.item.expendables[i].value; break;
                     case ExpendableType.AttackSpeedUP:
-                        playerStats.AttackSpeed = playerStats.AttackSpeed * selectedItem.item.expendables[i].value; break;
+                        playerStats.AttackSpeed += selectedItem.item.expendables[i].value; break;
                     case ExpendableType.Heal:
                         characterHealth.health += characterHealth.maxHealth * selectedItem.item.expendables[i].value;
                         if(characterHealth.health > characterHealth.maxHealth)

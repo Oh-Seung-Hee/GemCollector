@@ -22,5 +22,6 @@ MonoBehaviour:
   canStack: 0
   maxStackAmount: 0
   expendables:
-  - type: 2
+  - type: 3
     value: 0.25
+  color: 0
