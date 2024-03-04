@@ -20,6 +20,8 @@ public class ItemObject : MonoBehaviour, IInteractable
     {
         if (_other.CompareTag("Player"))
         {
+            UIManager.instance.ShowEventTextPopup();
+            AudioManager.instance.PlaySFX(AudioManager.instance.getItemClip);
             OnInteract();
         }
     }
