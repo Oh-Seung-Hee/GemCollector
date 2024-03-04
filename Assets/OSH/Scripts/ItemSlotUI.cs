@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,IPointerClickHandler
 {
     [SerializeField] private GameObject itemInfoUI;
     public TextMeshProUGUI selectedItemName;
@@ -52,5 +52,14 @@ public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         selectedItemName.text = _displayName;
         selectedItemDescription.text = _description;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        // 아이템이 존재하지 않을 때
+        if (Inventory.instance.slots[index].item == null)
+            return;
+
+        Inventory.instance.OnUseButton();
     }
 }
