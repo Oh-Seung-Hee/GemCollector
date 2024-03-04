@@ -11,6 +11,7 @@ public class ItemObject : MonoBehaviour, IInteractable
         if (Inventory.instance.GetEmptySlot() != null)
         {
             Inventory.instance.AddItem(item);
+            UIManager.instance.ShowEventTextPopup();
             Destroy(gameObject);
         }
     }
@@ -20,7 +21,6 @@ public class ItemObject : MonoBehaviour, IInteractable
     {
         if (_other.CompareTag("Player"))
         {
-            UIManager.instance.ShowEventTextPopup();
             AudioManager.instance.PlaySFX(AudioManager.instance.getItemClip);
             OnInteract();
         }
