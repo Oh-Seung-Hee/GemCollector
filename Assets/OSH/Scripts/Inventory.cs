@@ -12,6 +12,8 @@ public class Inventory : MonoBehaviour
     public ItemSlotUI[] uiSlots;
     public ItemSlot[] slots;
 
+    public int clearCondition = 5;
+
     [Header("Selected Item")]
     private ItemSlot selectedItem;
     private int selectedItemIndex;
@@ -57,9 +59,11 @@ public class Inventory : MonoBehaviour
                 slotToStackTo.quantity++;
                 UpdateUI();
                 
-                GemUI.instance.UpdateGemUI(UpdateGemUI(slotToStackTo), slotToStackTo.quantity);
+                //GemUI.instance.UpdateGemUI(UpdateGemUI(slotToStackTo), slotToStackTo.quantity);
                 return;
             }
+            //GemUI.instance.UpdateGemUI(_item.color, slotToStackTo.quantity);
+            clearCondition--;
         }
 
         ItemSlot emptySlot = GetEmptySlot();
@@ -69,11 +73,12 @@ public class Inventory : MonoBehaviour
             emptySlot.item = _item;
             emptySlot.quantity = 1;
             UpdateUI();
+            GemUI.instance.UpdateGemUI(_item.color, emptySlot.quantity);
             return;
         }
     }
 
-    private GemColorType UpdateGemUI(ItemSlot _slot)
+    private GemColorType UpdateGem(ItemSlot _slot)
     {
         return _slot.item.color;
     }
