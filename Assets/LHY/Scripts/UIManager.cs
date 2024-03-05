@@ -26,8 +26,6 @@ public class UIManager : MonoBehaviour
 
     private List<UIPopup> popups = new List<UIPopup>();
     private bool isMenu = false;
-    private bool isInventory = false;
-    private bool isInformation = false;
     public UIPopup ShowPopup(string popupname)
     {
         var obj = Resources.Load("Popups/" + popupname, typeof(GameObject)) as GameObject;
