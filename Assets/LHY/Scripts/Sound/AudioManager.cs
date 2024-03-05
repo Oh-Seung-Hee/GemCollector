@@ -114,7 +114,7 @@ public class AudioManager : MonoBehaviour
         float CalculateMixerVolume(float f)
         {
 
-            return -Mathf.Pow(51f, 1f - f) + 1f;
+            return Mathf.Log10(f) * 20;
         }
 
     }
